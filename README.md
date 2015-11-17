@@ -1,2 +1,3 @@
 # my_env
-my linux develping environment
+Unix&Linux like system config file 
+Ubuntu and Mac
