@@ -1,0 +1,3 @@
+[submodule "server_ubuntu/vpn/setup-simple-pptp-vpn"]
+	path = server_ubuntu/vpn/setup-simple-pptp-vpn
+	url = https://github.com/viljoviitanen/setup-simple-pptp-vpn
