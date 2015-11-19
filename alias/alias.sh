@@ -11,3 +11,14 @@ alias lgrep='find . -name "*log*" | xargs grep'
 alias view='vim -R'
 alias cdb='cd ~/bin'
 alias cde='cd ~/src'
+cs()
+{
+if [ $# -eq 1 ]
+then
+	cd $1;
+	ls -rlt
+else
+	cd .;
+	ls -rlt
+fi
+}
