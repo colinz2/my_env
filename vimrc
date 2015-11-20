@@ -12,3 +12,5 @@ set shiftwidth=4
 set noexpandtab
 
 set tags+=./tags
+set tags+=../tags
+set tags+=../../tags
