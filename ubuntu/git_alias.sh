@@ -1,5 +1,9 @@
-
-alias gitpush='git push -u origin master'
+#
+#colin git alias, source it in .bashrc
+alias gitchk='git checkout'
+alias gitdf='git diff HEAD'
+alias gitst='git status'
+alias gitpom='git push -u origin master'
 
 gitcommit()
 {
@@ -11,3 +15,8 @@ gitcommit()
 
 }
 
+gitcl()
+{
+	git clone git@github.com:$1
+
+}
