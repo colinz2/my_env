@@ -4,16 +4,7 @@ alias gitchk='git checkout'
 alias gitdf='git diff HEAD'
 alias gitst='git status'
 alias gitpom='git push -u origin master'
-
-gitcommit()
-{
-	if [ $# -eq 1 ]; then
-		git commit -m $1;
-	else
-		git commit -m "commit"
-	fi
-
-}
+alias gitcm='git commit -m'
 
 gitcl()
 {
