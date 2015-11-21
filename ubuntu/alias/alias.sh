@@ -9,6 +9,7 @@ alias hgrep='find . -name "*.h" | xargs grep'
 alias mgrep='find . -name "*mk*" | xargs grep'
 alias lgrep='find . -name "*log*" | xargs grep'
 alias view='vim -R'
+alias cctags='ctags --langmap=c:.c.h -f tags -R'
 
 alias open='nautilus'
 
