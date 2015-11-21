@@ -1,6 +1,5 @@
-
-if [ -d $DVLP_ALIAS_DIR ]; then
-  for i in $DVLP_ALIAS_DIR/*.sh; do
+if [ -d $DVLP_ALIAS ]; then
+  for i in $DVLP_ALIAS/*.sh; do
     if [ -r $i ]; then
       . $i
     fi  
