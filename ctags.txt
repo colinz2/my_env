@@ -1,1 +1,1 @@
-ctags --langmap=c:.xc.pc.c.h -f .tags -R $HOME/src $HOME/include
+ctags --langmap=c:.c.h -f tags -R ./src ./inc
