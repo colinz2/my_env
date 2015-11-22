@@ -14,3 +14,13 @@ set noexpandtab
 set tags+=./tags
 set tags+=../tags
 set tags+=../../tags
+
+
+
+map <F8> :call Rungdb()<CR>
+func! Rungdb()
+	exec "w"
+	exec "!g++ % -g -o %<"
+	exec "!gdb ./%<"
+endfunc
+
