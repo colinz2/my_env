@@ -5,9 +5,11 @@ DVLP_SYS=ubuntu
 DVLP_DIR=/opt/dev
 DVLP_MYENV=$DVLP_DIR/.myenv
 
-DVLP_LIB=$DVLP_DIR/lib
-DVLP_INC=$DVLP_DIR/inc
-DVLP_BIN=$DVLP_DIR/bin
+DVLP_LOCAL=$DVLP_DIR/local
+DVLP_LIB=$DVLP_LOCAL/lib
+DVLP_INC=$DVLP_LOCAL/include
+DVLP_BIN=$DVLP_LOCAL/bin
+
 DVLP_MK=$DVLP_DIR/mk
 
 #set up
@@ -20,16 +22,16 @@ PWD=`pwd`
 
 #mkdir
 if [ ! -d $DVLP_LIB ]; then
-	mkdir $DVLP_LIB
+	mkdir -p $DVLP_LIB
 fi
 if [ ! -d $DVLP_INC ]; then
-	mkdir $DVLP_INC
+	mkdir -p $DVLP_INC
 fi
 if [ ! -d $DVLP_BIN ]; then
-	mkdir $DVLP_BIN
+	mkdir -p $DVLP_BIN
 fi
 if [ ! -d $DVLP_MK ]; then
-	mkdir $DVLP_MK
+	mkdir -p $DVLP_MK
 fi
 
 if [ ! -d $DVLP_MYENV ]; then
