@@ -1,0 +1,76 @@
+#/bin/bash #colin 2015 
+
+#config
+DVLP_SYS=ubuntu 
+DVLP_DIR=/opt/dev
+DVLP_MYENV=$DVLP_DIR/.myenv
+
+DVLP_LIB=$DVLP_DIR/lib
+DVLP_INC=$DVLP_DIR/inc
+DVLP_BIN=$DVLP_DIR/bin
+DVLP_MK=$DVLP_DIR/mk
+
+#set up
+target_rc=$HOME/.bashrc
+bak_dir=$HOME/.bakdir
+Date=`date +%Y-%m-%d`
+Time=`date +%H:%M:%S`
+DateTime=`date +%Y%m%d_%H%M%S`
+PWD=`pwd`
+
+#mkdir
+if [ ! -d $DVLP_LIB ]; then
+	mkdir $DVLP_LIB
+fi
+if [ ! -d $DVLP_INC ]; then
+	mkdir $DVLP_INC
+fi
+if [ ! -d $DVLP_BIN ]; then
+	mkdir $DVLP_BIN
+fi
+if [ ! -d $DVLP_MK ]; then
+	mkdir $DVLP_MK
+fi
+
+if [ ! -d $DVLP_MYENV ]; then
+	mkdir $DVLP_MYENV
+else
+	rm -rf $DVLP_MYENV/*
+fi
+
+#
+cp -Rbf `pwd`/$DVLP_SYS $DVLP_MYENV
+cp `pwd`/*.sh 			$DVLP_MYENV
+chmod a+x $DVLP_MYENV/*.sh
+
+if [ "$1" = "init" ]; then
+#back up bashrc
+if [ -d $bak_dir ]; then
+	echo "back $target_rc"
+else
+	mkdir $bak_dir
+fi
+cp $target_rc $bak_dir/bashrc_$DateTime
+
+#write command to bashrc
+echo " "												>>	$target_rc
+echo "#colin env install v.0.0.1,------------"			>>	$target_rc	
+echo "#--------$Date $Time----------"					>>	$target_rc
+echo "DVLP_DIR=$DVLP_DIR"								>>  $target_rc
+echo "DVLP_MYENV=$DVLP_MYENV"							>>  $target_rc
+echo "DVLP_SYS=$DVLP_SYS"								>>  $target_rc
+echo "if [ -f $DVLP_MYENV/myenv_set_alias.sh ]; then"	>>	$target_rc
+echo "	. $DVLP_MYENV/myenv_set_alias.sh"				>>	$target_rc
+echo "fi"												>>	$target_rc
+echo " "												>>	$target_rc
+echo "if [ -f $DVLP_MYENV/myenv_set.sh ]; then"			>>	$target_rc
+echo "	. $DVLP_MYENV/myenv_set.sh"						>>	$target_rc
+echo "fi"												>>	$target_rc
+echo "#--------------------------------------"			>>	$target_rc
+echo " "												>>	$target_rc
+
+vim $target_rc
+fi
+
+echo "myenv set up successfully"
+
