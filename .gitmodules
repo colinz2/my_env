@@ -4,3 +4,6 @@
 [submodule "server_ubuntu/vpn/setup-simple-ipsec-l2tp-vpn"]
 	path = server_ubuntu/vpn/setup-simple-ipsec-l2tp-vpn
 	url = https://github.com/philplckthun/setup-simple-ipsec-l2tp-vpn
+[submodule "vim/vimrc"]
+	path = vim/vimrc
+	url = https://github.com/amix/vimrc
