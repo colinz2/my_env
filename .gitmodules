@@ -7,3 +7,6 @@
 [submodule "vim/vimrc"]
 	path = vim/vimrc
 	url = git@github.com:colin-dvlp/my_env.git 
+[submodule "vim/--force"]
+	path = vim/--force
+	url = git@github.com:colin-dvlp/vimrc.git
