@@ -6,4 +6,4 @@
 	url = https://github.com/philplckthun/setup-simple-ipsec-l2tp-vpn
 [submodule "vim/vimrc"]
 	path = vim/vimrc
-	url = https://github.com/amix/vimrc
+	url = git@github.com:colin-dvlp/my_env.git 
