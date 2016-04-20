@@ -2,10 +2,10 @@
 
 #config
 DVLP_SYS=ubuntu 
-DVLP_DIR=/opt/dev
+DVLP_DIR=/opt/dvlp
 DVLP_MYENV=$DVLP_DIR/.myenv
 
-DVLP_LOCAL=$DVLP_DIR/local
+DVLP_LOCAL=$DVLP_DIR
 DVLP_LIB=$DVLP_LOCAL/lib
 DVLP_INC=$DVLP_LOCAL/include
 DVLP_BIN=$DVLP_LOCAL/bin
@@ -55,21 +55,22 @@ fi
 cp $target_rc $bak_dir/bashrc_$DateTime
 
 #write command to bashrc
-echo " "												>>	$target_rc
+echo " "							>>	$target_rc
 echo "#colin env install v.0.0.1,------------"			>>	$target_rc	
-echo "#--------$Date $Time----------"					>>	$target_rc
-echo "DVLP_DIR=$DVLP_DIR"								>>  $target_rc
-echo "DVLP_MYENV=$DVLP_MYENV"							>>  $target_rc
-echo "DVLP_SYS=$DVLP_SYS"								>>  $target_rc
-echo "if [ -f $DVLP_MYENV/myenv_set_alias.sh ]; then"	>>	$target_rc
-echo "	. $DVLP_MYENV/myenv_set_alias.sh"				>>	$target_rc
-echo "fi"												>>	$target_rc
-echo " "												>>	$target_rc
+echo "#--------$Date $Time----------"				>>	$target_rc
+echo "DVLP_DIR=$DVLP_DIR"					>>      $target_rc
+#echo "DVLP_LOCAL=$DVLP_LOCAL"					>>      $target_rc
+echo "DVLP_MYENV=$DVLP_MYENV"					>>      $target_rc
+echo "DVLP_SYS=$DVLP_SYS"					>>      $target_rc
+echo "if [ -f $DVLP_MYENV/myenv_set_alias.sh ]; then"	        >>	$target_rc
+echo "	. $DVLP_MYENV/myenv_set_alias.sh"			>>	$target_rc
+echo "fi"							>>	$target_rc
+echo " "							>>	$target_rc
 echo "if [ -f $DVLP_MYENV/myenv_set.sh ]; then"			>>	$target_rc
-echo "	. $DVLP_MYENV/myenv_set.sh"						>>	$target_rc
-echo "fi"												>>	$target_rc
+echo "	. $DVLP_MYENV/myenv_set.sh"				>>	$target_rc
+echo "fi"							>>	$target_rc
 echo "#--------------------------------------"			>>	$target_rc
-echo " "												>>	$target_rc
+echo " "							>>	$target_rc
 
 vim $target_rc
 fi
