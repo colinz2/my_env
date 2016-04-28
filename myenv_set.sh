@@ -20,13 +20,13 @@ if [ -d $DVLP_SET ]; then
 fi
 
 
-if [ ! -d "$HOME/applications" ]; then
-	mkdir $HOME/applications
+if [ ! -d "$HOME/Applications" ]; then
+	mkdir $HOME/Applications
 fi
 
-export PATH=$PATH:$HOME/applications
+export PATH=$PATH:$HOME/Applications
 
-for i in $HOME/applications/* ; do
+for i in $HOME/Applications/* ; do
 	if [ -d "$i/bin" ]; then
 		export PATH=$PATH:$i/bin
 	fi
