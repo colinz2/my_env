@@ -18,3 +18,17 @@ if [ -d $DVLP_SET ]; then
   done
   unset i
 fi
+
+
+if [ ! -d "$HOME/applications" ]; then
+	mkdir $HOME/applications
+fi
+
+export PATH=$PATH:$HOME/applications
+
+for i in $HOME/applications/* ; do
+	if [ -d "$i/bin" ]; then
+		export PATH=$PATH:$i/bin
+	fi
+done
+unset i
