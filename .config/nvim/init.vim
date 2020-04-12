@@ -1,10 +1,9 @@
 
 if empty(glob('~/.config/nvim/autoload/plug.vim'))
-	silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
-				\ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-	autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+    silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
+                \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
-
 
 "auto plugged
 call plug#begin('~/.vim/plugged')
@@ -15,6 +14,10 @@ Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'connorholyday/vim-snazzy'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'majutsushi/tagbar', { 'on': 'TagbarOpenAutoClose' }
+" Plug 'Valloric/YouCompleteMe'
+Plug 'tpope/vim-commentary'
+Plug 'ctrlpvim/ctrlp.vim'
 
 call plug#end()
 
@@ -26,6 +29,7 @@ let g:go_version_warning = 0
 
 let mapleader=" "
 set nocompatible
+set pastetoggle=<F2>
 syntax on
 filetype on
 set nonumber
@@ -37,7 +41,7 @@ exec "nohlsearch"
 set incsearch
 set ignorecase
 set smartcase
-
+set scrolloff=5
 
 map s <nop>
 map S :w<CR>
@@ -100,5 +104,8 @@ let g:NERDTreeIndicatorMapCustom = {
     \ "Unknown"   : "?"
     \ }
 
-
+" Tagbar
+" silent 命令回显
+map <silent> T :TagbarOpenAutoClose<CR>
+nmap <F8> :TagbarToggle<CR>
 
